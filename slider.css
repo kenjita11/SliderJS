@@ -1,0 +1,22 @@
+#container{
+		position: relative;
+	margin: 0 auto;
+	max-width: 60%;
+}
+.image_view{
+	width: 100%;
+}
+.btn_pre{
+	position: absolute;
+	left: 0%;
+	top: 0px;
+	height: 100%;
+	background-color: #cccccc;
+}
+.btn_next{
+	position: absolute;
+	right: 0%;
+	top: 0px;
+	height: 100%;
+	background-color: #cccccc;
+}

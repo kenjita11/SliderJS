@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="slider.css">
+	<title>Slider</title>
+</head>
+<body>
+	<div id= "container">
+		<img class= "image_view" src= "imgs/1.jpg">
+		<img class= "image_view" src= "imgs/2.jpg">
+		<img class= "image_view" src= "imgs/3.jpg">
+		<img class= "image_view" src= "imgs/4.jpg">
+		<button class= "btn_pre" onclick="btn_click(-1)"><<</button>
+		<button class= "btn_next" onclick="btn_click(1)">>></button>
+	</div>
+
+	<script type="text/javascript">
+		var slideIndex = 1;
+		showImage(slideIndex);
+		AutoChange();
+
+		function btn_click(n) {
+    		showImage(slideIndex += n);
+		}
+
+		function showImage(n) {
+		    var x = document.getElementsByClassName("image_view");
+		    if (n > x.length){
+		    	slideIndex = 1
+		    } 
+		    if (n < 1){
+		    	slideIndex = x.length
+		    }
+		    for (i = 0; i < x.length; i++){
+		        x[i].style.display = "none";
+		    }
+		    x[slideIndex-1].style.display = "block"; 
+		}
+
+		function AutoChange() {
+		    var x = document.getElementsByClassName("image_view");
+		    for (i = 0; i < x.length; i++){
+		      x[i].style.display = "none";
+		    }
+		    slideIndex++;
+		    if (slideIndex > x.length){
+		    	slideIndex = 1
+		    } 
+		    x[slideIndex-1].style.display = "block"; 
+		    setTimeout(AutoChange, 2000); // thay doi anh sau 5s
+		}
+	</script>
+</body>
+</html>
